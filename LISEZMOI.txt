@@ -1,0 +1,62 @@
+NETTOYAGE DU DISQUE - mode d'emploi
+===================================
+
+Ce petit outil cherche ce qui prend de la place inutilement sur ton PC Windows
+et te propose de le supprimer. Il ne supprime RIEN sans ton accord.
+
+
+COMMENT L'UTILISER
+------------------
+1. Double-clique sur « Lancer-Nettoyage.bat ».
+2. Attends la fin de l'analyse (de 1 à 10 minutes selon la taille du disque).
+3. Lis la liste numérotée qui s'affiche.
+4. Tape les numéros à nettoyer (exemple : 1,3,7-9),
+   ou S pour tout ce qui est marqué « Sûr »,
+   ou appuie juste sur Entrée pour quitter sans rien toucher.
+5. Vérifie le récapitulatif et tape OUI pour lancer le nettoyage.
+
+Pour seulement voir le rapport, sans aucune question :
+   Lancer-Nettoyage.bat -SeulementAnalyse
+
+
+CE QUE L'OUTIL CHERCHE
+----------------------
+- Caches : shaders des cartes graphiques (NVIDIA, AMD, Intel), navigateurs,
+  fichiers temporaires, caches Python / Node.js / Gradle.
+- Restes de jeux désinstallés : dossiers Steam et Epic Games qui sont restés
+  sur le disque après la désinstallation, caches et mods de ces jeux.
+- Jeux Steam installés mais pas lancés depuis 30 jours ou plus.
+- Anciennes versions d'applications que certaines applis gardent
+  (CapCut, Discord...). La version la plus récente est toujours conservée.
+- Dossiers de développement de projets inactifs (node_modules, environnements
+  Python, compilations Android et Unreal) : ils se régénèrent.
+- Fichiers temporaires géants abandonnés (.partial, .crdownload, .tmp...).
+- Gros fichiers personnels (2 Go et plus) et vieux téléchargements (+ de 90 jours).
+- Entrées de démarrage qui ne lancent plus aucun programme.
+
+
+« SÛR » OU « À VÉRIFIER » ?
+---------------------------
+Sûr         : se recrée tout seul ou ne sert plus à rien. Tu peux y aller.
+À vérifier  : peut contenir quelque chose qui compte pour toi
+              (sauvegardes de jeu, mods, photos, vidéos...). Regarde avant.
+
+
+OÙ VONT LES FICHIERS SUPPRIMÉS ?
+--------------------------------
+- Caches et fichiers régénérables : supprimés définitivement.
+- Restes de jeux, gros fichiers, téléchargements : envoyés à la Corbeille.
+  Ils ne libèrent la place qu'une fois la Corbeille vidée.
+  Si un élément est trop gros pour la Corbeille, Windows te prévient avant.
+- Jeux Steam : c'est Steam qui les désinstalle et te demande de confirmer.
+- Entrées de démarrage : une sauvegarde .reg est créée dans « Documents »
+  (double-clique dessus pour revenir en arrière).
+
+
+CONSEILS
+--------
+- Ferme les jeux, Steam, ton navigateur et les applis concernées avant de nettoyer.
+- Pas besoin d'être administrateur. En administrateur (clic droit sur le .bat >
+  Exécuter en tant qu'administrateur), l'outil peut aussi vider les fichiers
+  temporaires de Windows.
+- Pour désinstaller un programme, passe par Paramètres > Applications.
